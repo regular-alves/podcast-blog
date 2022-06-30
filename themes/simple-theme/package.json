@@ -1,0 +1,11 @@
+{
+  "name": "simple-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass assets/stylesheet/style.scss:assets/stylesheet/style.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

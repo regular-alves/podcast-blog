@@ -1,0 +1,15 @@
+{
+    "name": "rodrigo/simple-theme",
+    "autoload": {
+        "psr-4": {
+            "Rodrigo\\SimpleTheme\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rodrigo Alves",
+            "email": "rodrigo.gois@live.com"
+        }
+    ],
+    "require": {}
+}
