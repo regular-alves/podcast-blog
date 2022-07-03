@@ -3,6 +3,7 @@
 namespace SimpleImporter\Controller\Taxonomies;
 
 use SimpleImporter\Controller\PostTypes\Podcast;
+use \WP_Query;
 
 class PodcastGenre
 {
@@ -10,7 +11,7 @@ class PodcastGenre
 
   public function __construct()
   {
-    add_action( 'init', [ $this, 'register' ] );
+    add_action( 'init', [ $this, 'register' ], 2 );
   }
 
   public function register(): void
@@ -33,7 +34,9 @@ class PodcastGenre
       [
         'labels' => $labels,
         'public' => true,
-        'rewrite' => true,
+        'rewrite' => [
+          'slug' => 'genres'
+        ],
         'hierarchical' => true,
         'show_in_rest' => true,
       ] 

@@ -25,8 +25,8 @@ class SimpleImporter
   {
     new Controller\Admin();
     new Controller\Importer();
-    new Controller\PostTypes();
     new Controller\Taxonomies();
+    new Controller\PostTypes();
   }
 
   static function getPath(): string 

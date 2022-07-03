@@ -10,7 +10,7 @@ class PodcastPublisher
 
   public function __construct()
   {
-    add_action( 'init', [ $this, 'register' ] );
+    add_action( 'init', [ $this, 'register' ], 7 );
   }
 
   public function register(): void

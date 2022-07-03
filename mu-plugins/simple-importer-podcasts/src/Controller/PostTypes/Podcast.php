@@ -3,6 +3,7 @@
 namespace SimpleImporter\Controller\PostTypes;
 
 use Exception;
+use \WP_Query;
 use SimpleImporter\Controller\Taxonomies\PodcastCountry;
 use SimpleImporter\Controller\Taxonomies\PodcastLanguage;
 use SimpleImporter\Controller\Taxonomies\PodcastPublisher;
@@ -13,6 +14,13 @@ use SimpleImporter\Service\JsonToPosts;
 class Podcast 
 {
   public const type = 'podcast';
+  public $tax = [
+    PodcastGenre::type,
+    PodcastType::type,
+    PodcastLanguage::type,
+    PodcastCountry::type,
+    PodcastPublisher::type
+  ];
 
   public function __construct()
   {
@@ -20,6 +28,7 @@ class Podcast
     add_action( 'acf/init', [ $this, 'addPostFields' ] );
     add_action( 'wp_ajax_submit-json-podcasts', [ $this, 'processFile' ] );
     add_action( 'wp_ajax_nopriv_submit-json-podcasts', [ $this, 'processFile' ] );
+    add_filter( 'pre_get_posts', [ $this, 'fixQueryPostType' ] );
   }
   
   public function register(): void
@@ -48,12 +57,9 @@ class Podcast
       'hierarchical' => false,
       'menu_position' => 10.1,
       'supports' => [ 'title', 'editor', 'author', 'thumbnail' ],
-      'taxonomies' => [
-        PodcastGenre::type,
-        PodcastType::type,
-        PodcastLanguage::type,
-        PodcastCountry::type,
-        PodcastPublisher::type
+      'taxonomies' => $this->tax,
+      'rewrite' => [
+        'slug' => 'podcasts'
       ],
       'show_in_rest' => true,
       'menu_icon' => 'dashicons-microphone',
@@ -167,5 +173,16 @@ class Podcast
 
     http_response_code( 204 );
     die();
+  }
+  
+  public function fixQueryPostType( WP_Query $query ): WP_Query
+  {
+    if ( ! is_tax( $this->tax ) ) {
+      return $query;
+    }
+
+    $query->set( 'post_type', Podcast::type );
+
+    return $query;
   }
 }
