@@ -34,7 +34,7 @@ class PodcastGenre
         'labels' => $labels,
         'public' => true,
         'rewrite' => true,
-        'hierarchical' => false,
+        'hierarchical' => true,
         'show_in_rest' => true,
       ] 
     );
