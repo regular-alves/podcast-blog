@@ -39,4 +39,26 @@ class PodcastPublisher
       ] 
     );
   }
+
+  static public function format( int $post ): string
+  {
+    $terms = get_the_terms( $post, PodcastPublisher::type );
+
+    if ( ! is_array( $terms ) ) {
+      return '';
+    }
+
+    $terms = array_map(
+      fn( $term ) => $term->name,
+      $terms
+    );
+
+    if ( count( $terms ) <= 2 ) {
+      return implode(' and ', $terms);
+    }
+
+    $last = array_pop( $terms );
+
+    return implode( ', ', $terms ) . ", and $last";
+  }
 }
