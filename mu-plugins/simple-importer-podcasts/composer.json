@@ -1,0 +1,15 @@
+{
+    "name": "rodrigo/simple-importer",
+    "autoload": {
+        "psr-4": {
+            "SimpleImporter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rodrigo Alves",
+            "email": "rodrigo.gois@live.com"
+        }
+    ],
+    "require": {}
+}
