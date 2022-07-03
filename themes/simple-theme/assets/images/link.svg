@@ -1,0 +1,12 @@
+
+<svg width="14px" height="7px" viewBox="0 0 14 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-619.000000, -412.000000)" fill="#777777">
+            <g id="Podcast" transform="translate(355.000000, 255.000000)">
+                <g id="Listen" transform="translate(176.000000, 152.000000)">
+                    <path d="M98.5,5 L95.7,5 L95.7,6.33 L98.5,6.33 C99.697,6.33 100.67,7.303 100.67,8.5 C100.67,9.697 99.697,10.67 98.5,10.67 L95.7,10.67 L95.7,12 L98.5,12 C100.432,12 102,10.432 102,8.5 C102,6.568 100.432,5 98.5,5 L98.5,5 Z M92.2,9.2 L97.8,9.2 L97.8,7.8 L92.2,7.8 L92.2,9.2 Z M89.33,8.5 C89.33,7.303 90.303,6.33 91.5,6.33 L94.3,6.33 L94.3,5 L91.5,5 C89.568,5 88,6.568 88,8.5 C88,10.432 89.568,12 91.5,12 L94.3,12 L94.3,10.67 L91.5,10.67 C90.303,10.67 89.33,9.697 89.33,8.5 L89.33,8.5 Z" id="icon-url"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

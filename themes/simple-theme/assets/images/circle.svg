@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="317px" height="317px" viewBox="0 0 317 317" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Oval</title>
+    <defs>
+        <linearGradient x1="-1.11022302e-14%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#FD741B" offset="0%"></stop>
+            <stop stop-color="#A300BB" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Desktop" transform="translate(-1108.000000, -255.000000)" fill="url(#linearGradient-1)">
+            <circle id="Oval" cx="1266.5" cy="413.5" r="158.5"></circle>
+        </g>
+    </g>
+</svg>

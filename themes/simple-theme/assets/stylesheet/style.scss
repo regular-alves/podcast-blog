@@ -1,0 +1,247 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@font-face {
+  font-family: "SpaceMono";
+  font-weight: 400;
+  src: url("../fonts/SpaceMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  font-weight: 500 900;
+  src: url("../fonts/SpaceMono-Bold.ttf");
+}
+
+@font-face {
+  font-family: "WorkSans";
+  font-weight: 400;
+  src: url("../fonts/WorkSans-Regular.ttf");
+}
+
+body {
+  font-family: "WorkSans", sans-serif;
+  font-size: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #5c6b80;
+  background-color: #FEFAFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "SpaceMono";
+  font-weight: 600;
+  line-height: 1em;
+}
+
+h1 {
+  font-size: 44px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none;
+
+  &[nofollow] {
+    font-family: "SpaceMono";
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.Header {
+  width: 100%;
+  display: block;
+  background-color: #4E105C;
+  background-image: url(../images/triangle.svg), url(../images/circle.svg);
+  background-repeat: no-repeat;
+  background-position: 80% -200%, 80% 130%;
+  padding: 30px 0;
+  
+  & > &-content {
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: 400;
+  }
+
+  &-genre {
+    display: inline-block;
+    font-weight: 600;
+    background: radial-gradient(circle at top right, #FD741B, #9C00B2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media all and (max-width: $md) {
+      display: block;
+    }
+  }
+}
+
+.ContentWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media all and (max-width: $xl) {
+    padding: 0 15px;
+  }
+}
+
+.PostList {
+  list-style: none;
+  counter-reset: item;
+}
+
+.Post {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 10fr;
+  counter-increment: item;
+  margin: 15px 0;
+
+  @media all and (max-width: $lg) {
+    grid-template-columns: 2fr 10fr;
+  }
+  
+  @media all and (max-width: $md) {
+    grid-template-columns: 1fr;
+  }
+  
+  &:before {
+    content: counter(item);
+    grid-column: 1/2;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.6em;
+    width: 1.6em;
+    background: radial-gradient(circle at top right, #FD741B, #9C00B2);
+    text-align: center;
+    border-radius: 1.6em;
+    color: #fff;
+
+    @media all and (max-width: $md) {
+      margin: 0 0 -20px -10px;
+      z-index: 2;
+    }
+  }
+
+  &-contentWrapper {
+    background: #fff;
+    box-shadow: 0 0 10px 0 #9c00b261;
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+
+    @media all and (max-width: $md) {
+      grid-column: 1/2;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-thumbnail {
+    grid-column: 1/2;
+    margin: 0 0 0 -30px;
+
+    > img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #f0f0f0;
+    }
+
+    @media all and (max-width: $md) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      z-index: 2;
+    }
+  }
+
+  &-content {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-gap: 30px;
+    padding: 0 30px;
+    justify-content: space-between;
+    color: #222222;
+
+    @media all and (max-width: $md) {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-heading {
+    h2 {
+      font-family: 'WorkSans';
+      margin: 15px 0;
+    }
+
+    @media all and (max-width: $md) {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+  }
+
+  &-subheading {
+    margin-bottom: 15px;
+  }
+
+  &-subheadingName {
+    color: #9C00B2;
+  }
+
+  &-sublinks {
+    border-top: 1px solid #777777;
+    padding-top: 15px;
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+  }
+
+  &-sublink {
+    padding: 0 30px 0 0;
+    color: #777777;
+
+    &:before {
+      width: 20px;
+      display: inline-block;
+    }
+  }
+
+  &-sublink--rss:before {
+    content: url('../images/rss.svg')
+  }
+
+  &-sublink--web:before {
+    content: url('../images/link.svg')
+  }
+
+  &-sublink--itunes:before {
+    content: url('../images/apple.svg')
+  }
+
+  &-description {
+    @media all and (max-width: $md) {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
+  }
+}
